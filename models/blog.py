@@ -11,7 +11,7 @@ class Blog(object):
         self.author = author
         self.title = title
         self.description = description
-        self.id = uuid.uuid4().hex if id is None else id
+        self.id = str(uuid.uuid4())[:8] if id is None else id
 
     def new_post(self):
         title = input("Enter post title: ")
